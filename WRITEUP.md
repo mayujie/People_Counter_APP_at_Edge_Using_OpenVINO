@@ -144,8 +144,8 @@ In investigating potential people counter models, I tried each of the following 
     python main.py -i resources/Pedestrian_Detect_2_1_1.mp4 -m models/ssdlite_mobilenet_v2_coco_2018_05_09/frozen_inference_graph.xml -l /opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so -d CPU -pt 0.2 | ffmpeg -v warning -f rawvideo -pixel_format bgr24 -video_size 768x432 -framerate 24 -i - http://0.0.0.0:3004/fac.ffm
     ```
 
-- Final Model from OpenVINO: [person-detection-retail-0013]
-[person-detection-retail-0013](https://docs.openvinotoolkit.org/2018_R5/_docs_Retail_object_detection_pedestrian_rmnet_ssd_0013_caffe_desc_person_detection_retail_0013.html) 
+- Final Model from OpenVINO: [[person-detection-retail-0013](https://docs.openvinotoolkit.org/2018_R5/_docs_Retail_object_detection_pedestrian_rmnet_ssd_0013_caffe_desc_person_detection_retail_0013.html)]
+
 Finally, i used the pretrained model person-detection-retail-0013 (FP32) which @Intel provided. The performance was much better than the three model i have tried before. With -pt threshold 0.4, i found the best accuracy which total count is 9 (Very close to actual number of person shown in whole video which is 6). 
 
     use downloader.py
